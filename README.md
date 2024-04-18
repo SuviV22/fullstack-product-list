@@ -9,7 +9,7 @@ A simple products page for customers to view product details. Since the API site
 
 Hopefully I've answered the question well. Thanks!
 
-HOW TO RUN?
+**HOW TO RUN?**
 
 Backend:
 
