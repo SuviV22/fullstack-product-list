@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Smartphone",
+    "description": "A high-end smartphone with advanced features.",
+    "basePrice": 799.99
+  },
+  {
+    "id": 2,
+    "name": "Laptop",
+    "description": "A powerful laptop with a sleek design.",
+    "basePrice": 1299.99
+  },
+  {
+    "id": 3,
+    "name": "Headphones",
+    "description": "Wireless headphones with noise-cancelling technology.",
+    "basePrice": 249.99
+  },
+  {
+    "id": 4,
+    "name": "Smartwatch",
+    "description": "A stylish smartwatch with fitness tracking capabilities.",
+    "basePrice": 199.99
+  },
+  {
+    "id": 5,
+    "name": "Tablet",
+    "description": "A versatile tablet for work and entertainment.",
+    "basePrice": 499.99
+  }
+]
