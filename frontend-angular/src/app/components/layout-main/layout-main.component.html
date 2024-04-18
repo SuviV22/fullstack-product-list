@@ -1,0 +1,88 @@
+<div class="w-screen h-screen">
+  <mat-sidenav-container autosize class="w-screen h-screen">
+    <mat-sidenav
+      mode="side"
+      opened="true"
+      class="h-screen text-center test-sidenav sidebar-tree transition-all duration-200 ease-out border-r-2"
+      [ngClass]="isSidebarOn ? 'w-60' : 'w-14'">
+      <div
+        class="w-full h-fit flex p-3"
+        [ngClass]="isSidebarOn ? 'justify-end' : 'justify-center'">
+        <button (click)="toggleSidebar()" class="hover:text-blue-950">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div class="h-2/6 flex items-center justify-center">
+        @if (isSidebarOn) {
+          <div
+            class="w-full p-5 justify-center font-montserrat font-medium text-4xl">
+            <button
+              class="text-blue-950 hover:cursor-pointer">
+              Shop
+            </button>
+          </div>
+        } @else {
+          <div
+            class="w-full py-5 px-2 justify-center font-montserrat font-medium text-4xl">
+            <button
+              class="text-blue-950 hover:cursor-pointer">
+              S
+            </button>
+          </div>
+        }
+      </div>
+      <div class="h-3/6 w-full">
+        <mat-tree
+          [dataSource]="dataSource"
+          [treeControl]="treeControl"
+          class="sidebar-tree w-full">
+          <mat-tree-node
+            *matTreeNodeDef="let node"
+            matTreeNodeToggle
+            (click)="setActiveNode(node)">
+            <div
+              class="mat-tree-node w-full text-center transition ease-in-out hover:cursor-pointer focus:-translate-y-1 hover:text-opacity-70 focus:bg-blue-950"
+              [ngClass]="[
+                isSidebarOn ? 'px-5' : 'px-2 justify-center',
+                router.url.includes(node.url.replace('./', ''))
+                  ? 'bg-blue-950'
+                  : ''
+              ]"
+              mat-ripple
+              [routerLink]="node.url">
+              <mat-icon
+                class=""
+                [ngClass]="{
+                  'text-white': router.url.includes(node.url.replace('./', ''))
+                }"
+                [class.d-none]="node.icon === null"
+                >{{ node.icon }}</mat-icon
+              >
+              @if (isSidebarOn) {
+                <div
+                  class="font-medium ml-3"
+                  [ngClass]="{
+                    'text-white': router.url.includes(
+                      node.url.replace('./', '')
+                    )
+                  }">
+                  {{ node.name }}
+                </div>
+              }
+            </div>
+          </mat-tree-node>
+        </mat-tree>
+      </div>
+      <div class="h-fit w-full grid items-end px-3">
+        <div class="text-blue-900 text-opacity-70 text-xs pb-5">
+          <span>Made by Suvithra :)</span>
+        </div>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content
+      class="bg-gray-100"
+      [ngClass]="!isSidebarOn ? 'ml-14' : ''">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

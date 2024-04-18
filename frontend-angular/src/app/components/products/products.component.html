@@ -1,0 +1,19 @@
+<div class="bg-white w-screen text-2xl font-bold text-center py-5 border-y-2 border-blue-950">List of Products</div>
+<hr>
+<div class="w-full h-full bg-blue-100 grid grid-cols-3 gap-10 p-12">
+  @for(product of products; track product.id) {
+    <mat-card class="bg-white h-40 rounded-3xl p-10 hover:scale-105 transition-all ease-linear duration-150">
+      <div class="flex justify-between items-center">
+        <div class="w-1/4">
+          <img alt="" src="https://img.freepik.com/free-photo/summer-podium-sale-with-coconut-tree-shadow-tropical-sunlight-pedestal-product-display-nature-platform-presentation-mockup-3d-background_56104-2324.jpg" />
+        </div>
+        <div class="w-3/4 ml-5">
+          <div class="font-bold">{{product.name}}</div>
+          <div>{{product.description}}</div>
+          <div>$ {{product.price}}</div>
+        </div>
+      </div>
+
+    </mat-card>
+  }
+</div>
