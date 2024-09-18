@@ -1,4 +1,4 @@
-# cityfm-product-list
+# product-list
 
 A simple products page for customers to view product details. Since the API site given in the question was not accessible, the way I went about it is:
 1. Creating a json file with product data.
